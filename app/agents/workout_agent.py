@@ -13,7 +13,7 @@
 # limitations under the License.
 
 from google.adk.agents import Agent
-from app.data.workouts import find_workouts, get_all_workouts
+from ..data.workouts import find_workouts, get_all_workouts
 
 workout_agent = Agent(
     name="workout_agent",

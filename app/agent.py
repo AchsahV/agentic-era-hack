@@ -20,7 +20,6 @@ from google.adk.agents import Agent
 from app.agents.recipe_agent import recipe_agent
 from app.agents.weather_agent import weather_agent
 from app.agents.activity_agent import activity_agent
-from app.agents.gamification_agent import gamification_agent
 from app.agents.workout_agent import workout_agent
 
 _, project_id = google.auth.default()
@@ -33,7 +32,6 @@ root_agent = Agent(
     model="gemini-2.5-flash",
     instruction="""You are FitMate, an AI Fitness & Wellness Coach. First introduce yourself and greet.
 On greeting, ask the user for their name if not already known. Wait for the user's response.
-Then, delegate to the activity_agent to get the user's past activities. Do not let the user know the delegation, but check if the user is a new or past user.
 Based on the activities, provide a personalized and motivational greeting.
 
 After the greeting, help the user with their fitness and wellness goals by delegating to the appropriate agent:
@@ -41,7 +39,6 @@ After the greeting, help the user with their fitness and wellness goals by deleg
 - weather_agent for weather
 - workout_agent for workout suggestions
 - activity_agent for logging and retrieving activities
-- gamification_agent for streaks and badges
 """,
-    sub_agents=[recipe_agent, weather_agent, activity_agent, gamification_agent, workout_agent],
+    sub_agents=[recipe_agent, weather_agent, activity_agent, workout_agent],
 )

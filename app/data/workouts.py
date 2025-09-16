@@ -49,3 +49,20 @@ WORKOUTS = [
         "description": "A steady-state run to improve your cardiovascular endurance."
     }
 ]
+
+def find_workouts(type: str = None, duration: int = None, difficulty: str = None) -> list:
+    """Finds workouts based on type, duration, and difficulty."""
+    results = []
+    for workout in WORKOUTS:
+        if type and workout["type"].lower() != type.lower():
+            continue
+        if duration and workout["duration"] > duration:
+            continue
+        if difficulty and workout["difficulty"].lower() != difficulty.lower():
+            continue
+        results.append(workout)
+    return results
+
+def get_all_workouts() -> list:
+    """Returns all workouts."""
+    return WORKOUTS
