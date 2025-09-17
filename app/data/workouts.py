@@ -12,6 +12,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+from typing import Optional
+
 WORKOUTS = [
     {
         "name": "Morning Yoga",
@@ -50,7 +52,7 @@ WORKOUTS = [
     }
 ]
 
-def find_workouts(type: str = None, duration: int = None, difficulty: str = None) -> list:
+def find_workouts(type: Optional[str] = None, duration: Optional[int] = None, difficulty: Optional[str] = None) -> list:
     """Finds workouts based on type, duration, and difficulty."""
     results = []
     for workout in WORKOUTS:

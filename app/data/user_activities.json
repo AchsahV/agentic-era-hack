@@ -1,5 +1,15 @@
 {
   "John": [
     "walk: 10km for today"
+  ],
+  "Peter": [
+    "walk: 30 minutes"
+  ],
+  "Max": [
+    "walk: 30 minutes",
+    "walk: 30 min"
+  ],
+  "Pet": [
+    "walk: 30min"
   ]
 }
